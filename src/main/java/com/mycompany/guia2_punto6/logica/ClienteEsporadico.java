@@ -1,35 +1,55 @@
 package com.mycompany.guia2_punto6.logica;
 
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class ClienteEsporadico extends Cliente
 {
     
     // Atributos
+    @Id
     private String dniCliente;
+    
+    @OneToMany (mappedBy = "unClienteEsporadico")
+    private List<Envio> listaEnvios; 
     
     // Constructores
 
-    public ClienteEsporadico(String dni, String nombre, String apellido, String telefono) {
+    public ClienteEsporadico(String dniCliente, List<Envio> listaEnvios, String nombre, String apellido, String telefono) {
         super(nombre, apellido, telefono);
-        this.dniCliente = dni;
+        this.dniCliente = dniCliente;
+        this.listaEnvios = listaEnvios;
     }
 
-    public ClienteEsporadico(String dni) {
-        this.dniCliente = dni;
+    public ClienteEsporadico(String dniCliente, List<Envio> listaEnvios) {
+        this.dniCliente = dniCliente;
+        this.listaEnvios = listaEnvios;
     }
-    
+
     public ClienteEsporadico() {
     }
+
+    
     
     // Getters y Setters
 
-    public String getDni() {
+    public String getDniCliente() {
         return dniCliente;
     }
 
-    public void setDni(String dni) {
-        this.dniCliente = dni;
+    public void setDniCliente(String dniCliente) {
+        this.dniCliente = dniCliente;
     }
-    
-    
+
+    public List<Envio> getListaEnvios() {
+        return listaEnvios;
+    }
+
+    public void setListaEnvios(List<Envio> listaEnvios) {
+        this.listaEnvios = listaEnvios;
+    }
     
 }

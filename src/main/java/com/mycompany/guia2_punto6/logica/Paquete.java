@@ -1,16 +1,32 @@
 package com.mycompany.guia2_punto6.logica;
 
 import java.sql.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+@Entity
 public class Paquete {
     //Atributos
+    @Id
     private int idPaquete;
-    private String estadoPaquete;
+    
+        
+    @Temporal(TemporalType.DATE)
     private Date fechaEntrega;
+    
+    @Basic
+    private String estadoPaquete;
     private double volumenPaquete;
     private String direccionDestinatario;
-    private String nombreDestinatario;
+    private String nombreDestinatario; 
     private double pesoPaquete;
+    
+    @ManyToOne
+    private Envio unEnvio;
     
     // Constructores
 
