@@ -10,7 +10,7 @@ public class Envio {
     private double valorTarifa;
     private Date fechaEnvio; // Trabajara solo con la fecha (No la hora)
     
-    // Constructores
+    // Constructores ds
 
     public Envio(int idEnvio, boolean tarifaRecogidaAplicada, double valorTarifa, Date fechaEnvio) {
         this.idEnvio = idEnvio;
