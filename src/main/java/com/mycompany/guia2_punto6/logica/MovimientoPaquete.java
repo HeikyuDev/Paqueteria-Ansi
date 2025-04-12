@@ -1,21 +1,35 @@
 package com.mycompany.guia2_punto6.logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
-
-public class MovimientoPaquete 
+@Entity
+public class MovimientoPaquete implements Serializable 
 {   
     // Atributos
+    @Id
     private int idMovimiento;
+    
+    @Temporal(TemporalType.TIMESTAMP)
     private  Date fechaHora;
+    
+    @ManyToOne
+    private Paquete unPaquete;
     
     //Constructores
 
-    public MovimientoPaquete(int idMovimiento, Date fechaHora) {
+    public MovimientoPaquete(int idMovimiento, Date fechaHora, Paquete unPaquete) {
         this.idMovimiento = idMovimiento;
         this.fechaHora = fechaHora;
+        this.unPaquete = unPaquete;
     }
+    
 
     public MovimientoPaquete() {
     }
@@ -36,6 +50,16 @@ public class MovimientoPaquete
     public void setFechaHora(Date fechaHora) {
         this.fechaHora = fechaHora;
     }
+
+    public Paquete getUnPaquete() {
+        return unPaquete;
+    }
+
+    public void setUnPaquete(Paquete unPaquete) {
+        this.unPaquete = unPaquete;
+    }
+    
+    
     
     
 }

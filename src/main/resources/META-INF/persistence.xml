@@ -2,6 +2,15 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.mycompany_Guia2_punto6_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.mycompany.guia2_punto6.logica.Paquete</class>
+    <class>com.mycompany.guia2_punto6.logica.Camion</class>
+    <class>com.mycompany.guia2_punto6.logica.Ciudad</class>
+    <class>com.mycompany.guia2_punto6.logica.ClienteEsporadico</class>
+    <class>com.mycompany.guia2_punto6.logica.ClienteFijo</class>
+    <class>com.mycompany.guia2_punto6.logica.Delegacion</class>
+    <class>com.mycompany.guia2_punto6.logica.Envio</class>
+    <class>com.mycompany.guia2_punto6.logica.Jaula</class>
+    <class>com.mycompany.guia2_punto6.logica.MovimientoPaquete</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Paqueteria"/>
       <property name="javax.persistence.jdbc.user" value="AdminRP"/>

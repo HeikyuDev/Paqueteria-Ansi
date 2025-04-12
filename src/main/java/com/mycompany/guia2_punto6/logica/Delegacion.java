@@ -1,21 +1,42 @@
 package com.mycompany.guia2_punto6.logica;
 
-public class Delegacion {
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Delegacion implements Serializable {
     
+    @Id
     private int idDelegacion;
+    
+    @Basic
     private String nombreDelegacion;
     private String direccionDelegacion;
     
+    @OneToMany(mappedBy = "unaDelegacion")
+    private List<Jaula> unaListaJaula;
+    
+    @ManyToOne
+    private Ciudad unaCiudad;
+    
     // Cosntructores
- 
-    public Delegacion(int idDelegacion, String nombreDelegacion, String direccionDelegacion) {
+
+    public Delegacion(int idDelegacion, String nombreDelegacion, String direccionDelegacion, List<Jaula> unaListaJaula, Ciudad unaCiudad) {
         this.idDelegacion = idDelegacion;
         this.nombreDelegacion = nombreDelegacion;
         this.direccionDelegacion = direccionDelegacion;
-    }
+        this.unaListaJaula = unaListaJaula;
+        this.unaCiudad = unaCiudad;
+    }       
 
     public Delegacion() {
     }
+    
     // Getters y Setters
 
     public int getIdDelegacion() {
@@ -42,8 +63,19 @@ public class Delegacion {
         this.direccionDelegacion = direccionDelegacion;
     }
 
-    
-    
-    
-    
+    public List<Jaula> getUnaListaJaula() {
+        return unaListaJaula;
+    }
+
+    public void setUnaListaJaula(List<Jaula> unaListaJaula) {
+        this.unaListaJaula = unaListaJaula;
+    }
+
+    public Ciudad getUnaCiudad() {
+        return unaCiudad;
+    }
+
+    public void setUnaCiudad(Ciudad unaCiudad) {
+        this.unaCiudad = unaCiudad;
+    }                
 }

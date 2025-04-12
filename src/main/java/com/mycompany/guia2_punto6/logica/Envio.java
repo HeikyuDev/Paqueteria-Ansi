@@ -1,5 +1,6 @@
 package com.mycompany.guia2_punto6.logica;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -11,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Envio {
+public class Envio implements Serializable {
     
     // Atributos
     @Id

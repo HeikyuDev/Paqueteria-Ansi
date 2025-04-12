@@ -1,11 +1,12 @@
 package com.mycompany.guia2_punto6.logica;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class ClienteFijo extends Cliente
+public class ClienteFijo extends Cliente implements Serializable
 {
     @Id
     private int codigoCliente;
